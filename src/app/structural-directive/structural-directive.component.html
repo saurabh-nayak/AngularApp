@@ -1,0 +1,28 @@
+<!-- If render will be true thenBlock will be executed otherwise elseBlock executed-->
+
+<div *ngIf="render;then thenBlock else elseBlock">
+</div> 
+
+    <ng-template #elseBlock>
+    <h2>Not Welcome {{name}} </h2>
+    </ng-template>
+
+    <ng-template #thenBlock>
+        <h2>Welcome {{name}} </h2>
+    </ng-template>
+
+    <!-- for switch case statement we can use ngSwitch directive and for
+     individual case *ngSwitchCase and for default case *ngSwitchDefault can be used-->
+
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">You picked Red color</p>
+    <p *ngSwitchCase="'blue'">You picked Blue color</p>
+    <p *ngSwitchDefault>No color picked</p>
+</div>
+
+<!-- *ngFor used for loop through the data some of the other variables also provides *ngFor directive -->
+<div *ngFor="let color of colors; index as i;first as f;last as l;odd as o; even as e">
+   {{i}} is <b>index</b>, IsFirst <b>{{f}}</b> IsLast <b>{{l}},</b> IsOdd 
+   <b>{{o}},</b> IsEven <b>{{e}}</b> of color <b>{{color}}</b>
+</div>
+

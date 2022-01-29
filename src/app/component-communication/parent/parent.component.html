@@ -1,0 +1,12 @@
+<p>parent works!</p>
+{{message}}
+<!-- Here we are sending name from parent component to child component
+name variable declared in ts file of parent which accepted by child component using
+@Input annotation that's how data flows from parent to child component -->
+
+<!-- To send data from child component to parent component can use EventEmitter class in child component and 
+can accept here with the same name and assign that to any variable of parent 
+That's how data flows from child component to parent component -->
+
+
+<app-child (event)="message=$event" [name]="name"></app-child>

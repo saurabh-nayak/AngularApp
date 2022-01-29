@@ -1,0 +1,39 @@
+<p>pipes works!</p>
+<!-- Pipes transform data from one from to another from -->
+String Pipes:
+<br/>
+{{name}}
+{{name | lowercase}}<br/>
+{{name | uppercase}}<br/>
+{{name | slice:2:5}}<br/>
+<br/>
+Number Pipes:
+<br/>
+{{22.234567 | number:'1.2-3'}}<br/>
+{{22.234567 | number:'3.5-7'}}<br/>
+{{22.234567 | number:'5.3-4'}}<br/>
+<br/><br/>
+Date pipes:
+<br/>
+{{date}}
+DateTime Pipe types:<br/>
+Short DateTime: {{date | date:'short'}}<br/>
+Medium DateTime: {{date | date:'medium'}}<br/>
+Long DateTime: {{date | date:'long'}}<br/>
+<br/>
+Date Pipe types:<br/><br/>
+ShortDate: {{date | date:'shortDate'}}<br/>
+MediumDate: {{date | date:'mediumDate'}}<br/>
+LongDate: {{date | date:'longDate'}}<br/>
+<br/>
+Time pipe types:<br/><br/>
+ShortTime: {{date | date:'shortTime'}}<br/>
+LongTime: {{date | date:'longTime'}}<br/>
+MediumTime: {{date | date:'mediumTime'}}<br/>
+<br/>
+Currency pipe:
+<br/>
+{{0.25 | currency}}
+<br/><br/>
+Json Pipe:
+{{student | json}}
