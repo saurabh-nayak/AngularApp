@@ -1,0 +1,6 @@
+{
+    "/getUnapprovedUsers": {
+    "target": "http://localhost:8075/getUnapprovedUsers",
+    "secure": false
+    }
+    }

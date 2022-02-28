@@ -1,0 +1,15 @@
+<div>
+  <p class="text text-danger">{{errorMessage}}</p>
+</div> 
+<form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+
+  <div>
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="username"/>
+
+  <label for="password">Password: </label>
+  <input id="password" type="password" formControlName="password">
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
