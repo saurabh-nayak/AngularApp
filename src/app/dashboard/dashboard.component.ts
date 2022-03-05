@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { userdetail } from '../plainObjects/userdetail';
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { LoginService } from '../services/login.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService:LoginService, private router: Router, private userdetail:userdetail ) { }
 
   ngOnInit(): void {
   }
@@ -18,8 +20,17 @@ export class DashboardComponent implements OnInit {
       (res)=>console.log(res),(err)=>console.log(err)
     )
   }
-  signup()
+  getUser()
   {
-    this.loginService.signup()
+    this.loginService.getUser().subscribe(
+      (res:userdetail)=>
+      {
+        this.userdetail.name=res.name;
+        this.userdetail.id=res.id;
+        this.userdetail.mobile=res.mobile;
+        this.userdetail.address=res.address;
+        this.router.navigateByUrl('/userdetail');
+      },(err)=>console.log(err)
+    )
   }
 }

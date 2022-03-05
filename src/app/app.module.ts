@@ -12,6 +12,7 @@ import { PipesComponent } from './pipes/pipes/pipes.component';
 import { LoginComponent } from './login/login.component';
 import { HttpClientModule, HttpClientXsrfModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserdetailComponent } from './userdetail/userdetail.component';
 
 @NgModule({
   declarations: [
@@ -22,15 +23,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ChildComponent,
     PipesComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserdetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientXsrfModule.withOptions({cookieName: 'XSRF-TOKEN'})
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     this.loginService.authenticat(this.loginForm.value).subscribe(
       (res:response)=>
       {
+        this.loginService.updateAuthstatus();
         this.router.navigateByUrl('/dashboard');
         this.jwtService.addJWTToLocalStorage(res.jwt);
     },(err:HttpErrorResponse)=>{
